@@ -1,5 +1,7 @@
 <?php
 
+use App\Post;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +17,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test/{id}', "PostController@index");
+Route::get('/read', function () {
+    $result = Post::find(1);
+
+    return array(
+        'id' => $result->id,
+        'title' => $result->title,
+        'description' => $result->body
+    );
+});
+
+Route::get('insert', function () {
+   $post = new Post;
+
+   $post->title = 'New Title';
+   $post->body = 'some post body';
+
+   $post->save();
+});
