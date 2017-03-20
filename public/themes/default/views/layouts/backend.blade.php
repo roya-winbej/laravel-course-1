@@ -8,9 +8,20 @@
 
     <link rel="stylesheet" href="{{ assetsCss('main.css') }}">
 
-    <title>Document</title>
+    <title>@yield('title')</title>
 </head>
 <body>
-    <h1>some</h1>
+
+    @yield('navigation')
+
+
+    <div class="container">
+        @yield('content')
+    </div>
+
+
+
+    @yield('scripts')
+
 </body>
 </html>

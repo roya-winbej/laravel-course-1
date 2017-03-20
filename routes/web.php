@@ -14,7 +14,7 @@ use App\Post;
 */
 
 Route::get('/', function () {
-    return view('layouts.backend');
+    return view('index');
 });
 
 Route::get('/read', function () {
